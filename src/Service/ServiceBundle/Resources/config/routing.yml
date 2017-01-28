@@ -1,0 +1,17 @@
+ServiceBundle_homepage:
+    path:     /
+    defaults: { _controller: "ServiceBundle:Page:index" }
+    requirements:
+         methods:  GET
+         
+ServiceBundle_about:
+    path:   /about
+    defaults: { _controller: "ServiceBundle:Page:about" }
+    requirements:
+         methods:  GET
+
+ServiceBundle_contact:
+    path: /contact
+    defaults: { _controller: "ServiceBundle:Page:contacts"}
+    requirements:
+        methods: GET|POST
