@@ -1,3 +1,11 @@
+service_image_table:
+    resource: "@ServiceBundle/Controller/ImageTableController.php"
+    type:     annotation
+
+service_institute:
+    resource: "@ServiceBundle/Controller/InstituteController.php"
+    type:     annotation
+
 service:
     resource: "@ServiceBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,0 +1,53 @@
+<?php
+
+namespace Service\ServiceBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Comment
+ *
+ * @ORM\Table(name="comment", indexes={@ORM\Index(name="FK__user", columns={"user_id"}), @ORM\Index(name="FK__institute", columns={"institude_id"})})
+ * @ORM\Entity
+ */
+class Comment
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="text", type="text", length=65535, nullable=false)
+     */
+    private $text;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \Service\ServiceBundle\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="Service\ServiceBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * })
+     */
+    private $user;
+
+    /**
+     * @var \Service\ServiceBundle\Entity\Institute
+     *
+     * @ORM\ManyToOne(targetEntity="Service\ServiceBundle\Entity\Institute")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="institude_id", referencedColumnName="id")
+     * })
+     */
+    private $institude;
+
+
+}
+

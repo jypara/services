@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Imagetables list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Src</th>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for imageTable in imageTables %}
+            <tr>
+                <td><a href="{{ path('imagetable_show', { 'id': imageTable.id }) }}">{{ imageTable.src }}</a></td>
+                <td>{{ imageTable.id }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('imagetable_show', { 'id': imageTable.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('imagetable_edit', { 'id': imageTable.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('imagetable_new') }}">Create a new imageTable</a>
+        </li>
+    </ul>
+{% endblock %}

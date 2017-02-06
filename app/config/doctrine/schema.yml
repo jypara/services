@@ -1,0 +1,74 @@
+User:
+  columns:
+    name:
+      type: string(255)
+      notnull:  true
+      unique: true
+    password:
+      type: string(255)
+      notnull: true
+      
+Institution:
+  columns:
+    name:
+      type: string(255)
+      notnull:  true
+    user_id:
+      type: integer
+      notnull: true
+    category_id:
+      type: integer
+      notnull: true
+  relations:
+    User:
+      onDelete: CASCADE
+      local:  user_id
+      foreign:  id
+      
+Category:
+  columns:
+    name:
+      type: string(255)
+      notnull: true
+
+Comment:
+  columns:
+    text: 
+      type: text
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+    institute_id:
+      type: integer
+      notnull: true
+  relations:
+    User:
+      onDelete: CASCADE
+      local:  user_id
+      foreign:  id
+    Institution:
+      onDelete: CASCADE
+      local:  institute_id
+      foreign:  id
+
+Image
+  columns:
+    src:
+      type: integer
+      notnull: true
+    user_id:
+      type: integer
+      notnull: true
+    institute_id:
+      type: integer
+      notnull: true
+  relations:
+    User:
+      onDelete: CASCADE
+      local:  user_id
+      foreign:  id
+    Institution:
+      onDelete: CASCADE
+      local:  institute_id
+      foreign:  id

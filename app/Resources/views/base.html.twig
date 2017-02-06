@@ -24,8 +24,8 @@
             {% block navigation %}
                 <nav>
                     <ul class="navigation">
-                        <li><a href="{{ path('ServiceBundle_homepage') }}">Home</a></li>
-                        <li><a href="{{ path('ServiceBundle_about') }}">About</a></li>
+                        <li><a href="{{ path('ServiceBundle_homepage') }}">Главная</a></li>
+                        <li><a href="{{ path('ServiceBundle_about') }}">Авторизация</a></li>
                         <li><a href="{{ path('ServiceBundle_contact') }}">Contact</a></li>
                     </ul>
                 </nav>
@@ -33,17 +33,14 @@
         </div>
 
         <hgroup>
-            <h2>{% block blog_title %}<a href="#">Symblog</a>{% endblock %}</h2>
-            <h3>{% block blog_tagline %}<a href="#">creating a blog in Symfony2</a>{% endblock %}</h3>
+            <h2>{% block blog_title %}<a href="#"></a>{% endblock %}</h2>
+            <h3>{% block blog_tagline %}<a href="#"></a>{% endblock %}</h3>
         </hgroup>
     </header>
 
     <section class="main-col">
         {% block body %}{% endblock %}
     </section>
-    <aside class="sidebar">
-        {% block sidebar %}{% endblock %}
-    </aside>
 
     <div id="footer">
         {% block footer %}

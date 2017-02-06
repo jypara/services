@@ -11,14 +11,14 @@
 
     <p>Want to contact symblog?</p>
     {{ form_start(form, { 'action': path('ServiceBundle_contact'), 'method': 'POST', 'attr': {'class': 'service'} }) }}
-{{ form_errors(form) }}
-
-{{ form_row(form.name) }}
-{{ form_row(form.email) }}
-{{ form_row(form.subject) }}
-{{ form_row(form.body) }}
-
-{{ form_rest(form) }}
-
-<input type="submit" value="Submit" />
-{% endblock %}
+    {{ form_errors(form) }}
+    
+    {{ form_row(form.name) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.subject) }}
+    {{ form_row(form.body) }}
+    
+    {{ form_rest(form) }}
+    
+    <input type="submit" value="Submit" />
+    {% endblock %}

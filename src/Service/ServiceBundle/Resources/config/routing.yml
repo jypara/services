@@ -6,7 +6,7 @@ ServiceBundle_homepage:
          
 ServiceBundle_about:
     path:   /about
-    defaults: { _controller: "ServiceBundle:Page:about" }
+    defaults: { _controller: "ServiceBundle:ImageTable:index" }
     requirements:
          methods:  GET
 
